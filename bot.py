@@ -92,7 +92,7 @@ async def check_user(user):
     try:
         await bot(
             functions.channels.GetParticipantRequest(
-                channel="BotzHub", participant=user
+                channel="EmoBotDevolopers", participant=user
             )
         )
         ok = True
@@ -111,8 +111,8 @@ async def start_msg(event):
         Button.url("Updates", url="https://t.me/EmoBotDevelopers"),
     ]
     if not await check_user(user.id):
-        msg += "\n\nI'm limited to the users in @BotzHub. Kinly join @BotzHub and then /start the bot!"
-        btns = Button.url("Join Channel", url="https://t.me/EmoBotDevelopers")
+        msg += "\n\nI'm limited to the users in @EmoBotDevolopers. Kinly join @BotzHub and then /start the bot!"
+        btns = Button.url("Join Channel", url="https://t.me/EmoBotDevolopers")
     await event.reply(msg, buttons=btns)
     if not await is_added("MAILBOT", user.id):
         await add_to_db("MAILBOT", user.id)
@@ -124,11 +124,11 @@ async def back(event):
     msg = f"Hi {user.first_name}, welcome to the bot!\n\nI'm a MailBox Bot - I can generate a random e-mail address for you and send you the e-mails that come to that e-mail address!\n\nHit /generate to set-up your inbox!"
     btns = [
         Button.inline("Disclaimer", data="disclaimer"),
-        Button.url("Updates", url="https://t.me/EmoBotDevelopers"),
+        Button.url("Updates", url="https://t.me/EmoBotDovelopers"),
     ]
     if not await check_user(user.id):
         msg += "\n\nI'm limited to the users in @EmoBotDevelopers. Kinly join @EmoBotDevelopers and then /start the bot!"
-        btns = Button.url("Join Channel", url="https://t.me/EmoBotDevelopers")
+        btns = Button.url("Join Channel", url="https://t.me/EmoBotDovelopers")
     await event.edit(msg, buttons=btns)
 
 
